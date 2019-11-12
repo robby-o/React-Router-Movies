@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import MovieCard from "./MovieCard";
 
-const MovieList = props => {
+const MovieList = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const getMovies = () => {
@@ -20,7 +20,6 @@ const MovieList = props => {
     getMovies();
   }, []);
 
-  // console.log(movies);
   return (
     <div className="movie-list">
       {movies.map(movie => (
@@ -33,7 +32,6 @@ const MovieList = props => {
 };
 
 function MovieDetails({ movie }) {
-  const { title, director, metascore, stars } = movie;
   return <MovieCard movie={movie} />;
 }
 
